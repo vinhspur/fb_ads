@@ -1,14 +1,8 @@
-import { Box, List, ListItem, ListItemIcon, Tooltip } from "@mui/material";
-import HomeIcon from "@mui/icons-material/Home";
-import CampaignIcon from "@mui/icons-material/Campaign";
-import AssessmentIcon from "@mui/icons-material/Assessment";
-import SettingsIcon from "@mui/icons-material/Settings";
-import logoMeta from "../../public/logo-meta.svg"; // Import logo-meta.svg
+import { Box, List, ListItem, Tooltip } from "@mui/material";
 
 const LeftContent = () => {
   return (
     <Box
-      width="60px"
       bgcolor="#ffffff"
       height="100vh"
       display="flex"
@@ -21,38 +15,139 @@ const LeftContent = () => {
         <ListItem
           component="a"
           href="#"
-          sx={{ "&:hover": { bgcolor: "#e0e0e0" } }}
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+          }}
         >
-          <Tooltip title="Trang chủ" arrow placement="right">
-            <ListItemIcon>
+          <Box>
+            <Tooltip title="Trang chủ" arrow placement="right">
               <img
                 src={"/logo-meta.svg"}
                 alt="Logo Meta"
-                style={{ width: "28px", height: "28px" }}
+                style={{ width: "32px", height: "32px" }}
               />
-            </ListItemIcon>
-          </Tooltip>
+            </Tooltip>
+          </Box>
         </ListItem>
         <ListItem
           component="a"
           href="#"
-          sx={{ "&:hover": { bgcolor: "#e0e0e0" } }}
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+          }}
         >
           <Tooltip title="Chiến dịch" arrow placement="right">
-            <ListItemIcon>
-              <CampaignIcon />
-            </ListItemIcon>
+            <img
+              src={"/avatar.jpg"}
+              alt="Logo Meta"
+              style={{ width: "32px", height: "32px", borderRadius: 4 }}
+            />
           </Tooltip>
         </ListItem>
         <ListItem
           component="a"
           href="#"
-          sx={{ "&:hover": { bgcolor: "#e0e0e0" } }}
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Tooltip title="Cài đặt" arrow placement="right">
+            <img
+              src={"/settings.png"}
+              alt="Logo Meta"
+              style={{ width: "20px", height: "20px" }}
+            />
+          </Tooltip>
+        </ListItem>
+        <ListItem
+          component="a"
+          href="#"
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Tooltip title="Cài đặt" arrow placement="right">
+            <img
+              src={"/settings.png"}
+              alt="Logo Meta"
+              style={{ width: "20px", height: "20px" }}
+            />
+          </Tooltip>
+        </ListItem>
+        <ListItem
+          component="a"
+          href="#"
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Tooltip title="Cài đặt" arrow placement="right">
+            <img
+              src={"/settings.png"}
+              alt="Logo Meta"
+              style={{ width: "20px", height: "20px" }}
+            />
+          </Tooltip>
+        </ListItem>
+        <ListItem
+          component="a"
+          href="#"
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Tooltip title="Cài đặt" arrow placement="right">
+            <img
+              src={"/settings.png"}
+              alt="Logo Meta"
+              style={{ width: "20px", height: "20px" }}
+            />
+          </Tooltip>
+        </ListItem>
+        <ListItem
+          component="a"
+          href="#"
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Tooltip title="Cài đặt" arrow placement="right">
+            <img
+              src={"/settings.png"}
+              alt="Logo Meta"
+              style={{ width: "20px", height: "20px" }}
+            />
+          </Tooltip>
+        </ListItem>
+        <ListItem
+          component="a"
+          href="#"
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+          }}
         >
           <Tooltip title="Đánh giá" arrow placement="right">
-            <ListItemIcon>
-              <AssessmentIcon />
-            </ListItemIcon>
+            <img
+              src={"/settings.png"}
+              alt="Logo Meta"
+              style={{ width: "20px", height: "20px" }}
+            />
           </Tooltip>
         </ListItem>
       </List>
@@ -62,45 +157,107 @@ const LeftContent = () => {
         <ListItem
           component="a"
           href="#"
-          sx={{ "&:hover": { bgcolor: "#e0e0e0" } }}
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+          }}
         >
           <Tooltip title="Cài đặt" arrow placement="right">
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
+            <img
+              src={"/settings.png"}
+              alt="Logo Meta"
+              style={{ width: "20px", height: "20px" }}
+            />
           </Tooltip>
         </ListItem>
         <ListItem
           component="a"
           href="#"
-          sx={{ "&:hover": { bgcolor: "#e0e0e0" } }}
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+          }}
         >
           <Tooltip title="Cài đặt" arrow placement="right">
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
+            <img
+              src={"/settings.png"}
+              alt="Logo Meta"
+              style={{
+                width: "20px",
+                height: "20px",
+                justifyContent: "center",
+              }}
+            />
           </Tooltip>
         </ListItem>
         <ListItem
           component="a"
           href="#"
-          sx={{ "&:hover": { bgcolor: "#e0e0e0" } }}
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+          }}
         >
           <Tooltip title="Cài đặt" arrow placement="right">
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
+            <img
+              src={"/settings.png"}
+              alt="Logo Meta"
+              style={{ width: "20px", height: "20px" }}
+            />
           </Tooltip>
         </ListItem>
         <ListItem
           component="a"
           href="#"
-          sx={{ "&:hover": { bgcolor: "#e0e0e0" } }}
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+          }}
         >
           <Tooltip title="Cài đặt" arrow placement="right">
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
+            <img
+              src={"/settings.png"}
+              alt="Logo Meta"
+              style={{ width: "20px", height: "20px" }}
+            />
+          </Tooltip>
+        </ListItem>
+        <ListItem
+          component="a"
+          href="#"
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Tooltip title="Cài đặt" arrow placement="right">
+            <img
+              src={"/settings.png"}
+              alt="Logo Meta"
+              style={{ width: "20px", height: "20px" }}
+            />
+          </Tooltip>
+        </ListItem>
+        <ListItem
+          component="a"
+          href="#"
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Tooltip title="Cài đặt" arrow placement="right">
+            <img
+              src={"/settings.png"}
+              alt="Logo Meta"
+              style={{ width: "20px", height: "20px" }}
+            />
           </Tooltip>
         </ListItem>
       </List>

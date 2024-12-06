@@ -8,7 +8,7 @@ function App() {
   return (
     <Box display="flex" height="100vh">
       {/* Left Sidebar */}
-      <Box width="56px" bgcolor="#f4f4f4" borderRight="1px solid #ddd">
+      <Box bgcolor="#f4f4f4" borderRight="1px solid #ddd">
         <LeftContent />
       </Box>
 
