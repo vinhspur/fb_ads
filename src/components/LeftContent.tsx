@@ -19,6 +19,7 @@ const LeftContent = () => {
             "&:hover": { bgcolor: "#e0e0e0" },
             display: "flex",
             justifyContent: "center",
+            padding: "16px 0px",
           }}
         >
           <Box>
@@ -38,6 +39,7 @@ const LeftContent = () => {
             "&:hover": { bgcolor: "#e0e0e0" },
             display: "flex",
             justifyContent: "center",
+            padding: "8px 0px 32px 0px",
           }}
         >
           <Tooltip title="Chiến dịch" arrow placement="right">
