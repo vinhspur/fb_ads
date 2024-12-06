@@ -1,25 +1,28 @@
-import React from "react";
-import logo from "./logo.svg";
+import { Box } from "@mui/material";
 import "./App.css";
+import LeftContent from "./components/LeftContent";
+import MainContent from "./components/MainContent";
+import RightContent from "./components/RightContent";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box display="flex" height="100vh">
+      {/* Left Sidebar */}
+      <Box width="56px" bgcolor="#f4f4f4" borderRight="1px solid #ddd">
+        <LeftContent />
+      </Box>
+
+      {/* Main Content */}
+      <Box flex="1" padding={2}>
+        {/* Thanh công cụ và bảng dữ liệu */}
+        <MainContent />
+      </Box>
+
+      {/* Right Panel */}
+      <Box width="56px" bgcolor="#f9f9f9" borderLeft="1px solid #ddd">
+        <RightContent />
+      </Box>
+    </Box>
   );
 }
 
