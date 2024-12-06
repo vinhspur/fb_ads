@@ -19,7 +19,7 @@ function App() {
       </Box>
 
       {/* Right Panel */}
-      <Box width="56px" bgcolor="#f9f9f9" borderLeft="1px solid #ddd">
+      <Box width="44px" bgcolor="#1C2B33" borderLeft="1px solid #ddd">
         <RightContent />
       </Box>
     </Box>
