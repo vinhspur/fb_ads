@@ -3,6 +3,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import CampaignIcon from "@mui/icons-material/Campaign";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import SettingsIcon from "@mui/icons-material/Settings";
+import logoMeta from "../../public/logo-meta.svg"; // Import logo-meta.svg
 
 const LeftContent = () => {
   return (
@@ -24,7 +25,11 @@ const LeftContent = () => {
         >
           <Tooltip title="Trang chủ" arrow placement="right">
             <ListItemIcon>
-              <HomeIcon />
+              <img
+                src={"/logo-meta.svg"}
+                alt="Logo Meta"
+                style={{ width: "28px", height: "28px" }}
+              />
             </ListItemIcon>
           </Tooltip>
         </ListItem>
