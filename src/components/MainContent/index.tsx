@@ -2,6 +2,8 @@ import { Padding } from "@mui/icons-material";
 import { Box } from "@mui/material";
 import React from "react";
 import HeaderMain from "./HeaderMain";
+import HeaderBottom from "./HeaderBottom";
+import HeaderWithTabs from "./TabPanel";
 
 const MainContent = () => {
   return (
@@ -13,6 +15,10 @@ const MainContent = () => {
       }}
     >
       <HeaderMain></HeaderMain>
+      <Box mt={2} mb={1}>
+        <HeaderBottom></HeaderBottom>
+      </Box>
+      <HeaderWithTabs></HeaderWithTabs>
     </Box>
   );
 };
