@@ -7,7 +7,7 @@ const MainContent = () => {
   return (
     <Box
       style={{
-        background: "linear-gradient(to right, #FAF1F1, #E9F7EF)",
+        background: "linear-gradient(to right, #FAF1F1, #E6F0FA)",
         height: "100vh", // Chiều cao đầy đủ cho thấy rõ hiệu ứng gradient
         padding: "12px",
       }}
