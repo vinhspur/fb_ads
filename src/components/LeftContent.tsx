@@ -27,7 +27,7 @@ const LeftContent = () => {
               <img
                 src={"/logo-meta.svg"}
                 alt="Logo Meta"
-                style={{ width: "32px", height: "32px" }}
+                style={{ width: "30px", height: "30px" }}
               />
             </Tooltip>
           </Box>
@@ -42,11 +42,11 @@ const LeftContent = () => {
             padding: "8px 0px 32px 0px",
           }}
         >
-          <Tooltip title="Chiến dịch" arrow placement="right">
+          <Tooltip title="" arrow placement="right">
             <img
               src={"/avatar.jpg"}
               alt="Logo Meta"
-              style={{ width: "32px", height: "32px", borderRadius: 4 }}
+              style={{ width: "30px", height: "30px", borderRadius: 4 }}
             />
           </Tooltip>
         </ListItem>
@@ -61,9 +61,27 @@ const LeftContent = () => {
         >
           <Tooltip title="Cài đặt" arrow placement="right">
             <img
-              src={"/settings.png"}
+              src={"/meter-checker.png"}
               alt="Logo Meta"
-              style={{ width: "20px", height: "20px" }}
+              style={{ width: "22px", height: "22px" }}
+            />
+          </Tooltip>
+        </ListItem>
+        <ListItem
+          component="a"
+          href="#"
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+            backgroundColor: "#C3DCF5",
+          }}
+        >
+          <Tooltip title="Cài đặt" arrow placement="right">
+            <img
+              src={"/time.png"}
+              alt="Logo Meta"
+              style={{ width: "25px", height: "25px" }}
             />
           </Tooltip>
         </ListItem>
@@ -76,14 +94,15 @@ const LeftContent = () => {
             justifyContent: "center",
           }}
         >
-          <Tooltip title="Cài đặt" arrow placement="right">
+          <Tooltip title="Báo cáo quảng cáo" arrow placement="right">
             <img
-              src={"/settings.png"}
+              src={"/file.png"}
               alt="Logo Meta"
-              style={{ width: "20px", height: "20px" }}
+              style={{ width: "22px", height: "22px" }}
             />
           </Tooltip>
         </ListItem>
+
         <ListItem
           component="a"
           href="#"
@@ -93,45 +112,11 @@ const LeftContent = () => {
             justifyContent: "center",
           }}
         >
-          <Tooltip title="Cài đặt" arrow placement="right">
+          <Tooltip title="Đối tượng" arrow placement="right">
             <img
-              src={"/settings.png"}
+              src={"/people.png"}
               alt="Logo Meta"
-              style={{ width: "20px", height: "20px" }}
-            />
-          </Tooltip>
-        </ListItem>
-        <ListItem
-          component="a"
-          href="#"
-          sx={{
-            "&:hover": { bgcolor: "#e0e0e0" },
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <Tooltip title="Cài đặt" arrow placement="right">
-            <img
-              src={"/settings.png"}
-              alt="Logo Meta"
-              style={{ width: "20px", height: "20px" }}
-            />
-          </Tooltip>
-        </ListItem>
-        <ListItem
-          component="a"
-          href="#"
-          sx={{
-            "&:hover": { bgcolor: "#e0e0e0" },
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <Tooltip title="Cài đặt" arrow placement="right">
-            <img
-              src={"/settings.png"}
-              alt="Logo Meta"
-              style={{ width: "20px", height: "20px" }}
+              style={{ width: "22px", height: "22px" }}
             />
           </Tooltip>
         </ListItem>
@@ -146,9 +131,43 @@ const LeftContent = () => {
         >
           <Tooltip title="Đánh giá" arrow placement="right">
             <img
-              src={"/settings.png"}
+              src={"/credit-card.png"}
               alt="Logo Meta"
-              style={{ width: "20px", height: "20px" }}
+              style={{ width: "22px", height: "22px" }}
+            />
+          </Tooltip>
+        </ListItem>
+        <ListItem
+          component="a"
+          href="#"
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Tooltip title="Cài đặt" arrow placement="right">
+            <img
+              src={"/sound.png"}
+              alt="Logo Meta"
+              style={{ width: "22px", height: "22px" }}
+            />
+          </Tooltip>
+        </ListItem>
+        <ListItem
+          component="a"
+          href="#"
+          sx={{
+            "&:hover": { bgcolor: "#e0e0e0" },
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Tooltip title="Đánh giá" arrow placement="right">
+            <img
+              src={"/menu.png"}
+              alt="Logo Meta"
+              style={{ width: "24px", height: "24px" }}
             />
           </Tooltip>
         </ListItem>
@@ -163,13 +182,18 @@ const LeftContent = () => {
             "&:hover": { bgcolor: "#e0e0e0" },
             display: "flex",
             justifyContent: "center",
+            backgroundColor: "#DCF0EB",
+            borderRadius: "50%",
+            height: "40px",
+            width: "40px",
+            marginLeft: "12px",
           }}
         >
           <Tooltip title="Cài đặt" arrow placement="right">
             <img
-              src={"/settings.png"}
+              src={"/question.png"}
               alt="Logo Meta"
-              style={{ width: "20px", height: "20px" }}
+              style={{ width: "22px", height: "22px" }}
             />
           </Tooltip>
         </ListItem>
@@ -184,7 +208,7 @@ const LeftContent = () => {
         >
           <Tooltip title="Cài đặt" arrow placement="right">
             <img
-              src={"/settings.png"}
+              src={"/paper.png"}
               alt="Logo Meta"
               style={{
                 width: "20px",
@@ -207,7 +231,7 @@ const LeftContent = () => {
             <img
               src={"/settings.png"}
               alt="Logo Meta"
-              style={{ width: "20px", height: "20px" }}
+              style={{ width: "22px", height: "22px" }}
             />
           </Tooltip>
         </ListItem>
@@ -222,9 +246,9 @@ const LeftContent = () => {
         >
           <Tooltip title="Cài đặt" arrow placement="right">
             <img
-              src={"/settings.png"}
+              src={"/bell.png"}
               alt="Logo Meta"
-              style={{ width: "20px", height: "20px" }}
+              style={{ width: "22px", height: "22px" }}
             />
           </Tooltip>
         </ListItem>
@@ -239,9 +263,9 @@ const LeftContent = () => {
         >
           <Tooltip title="Cài đặt" arrow placement="right">
             <img
-              src={"/settings.png"}
+              src={"/search-interface-symbol.png"}
               alt="Logo Meta"
-              style={{ width: "20px", height: "20px" }}
+              style={{ width: "22px", height: "22px" }}
             />
           </Tooltip>
         </ListItem>
@@ -256,9 +280,9 @@ const LeftContent = () => {
         >
           <Tooltip title="Cài đặt" arrow placement="right">
             <img
-              src={"/settings.png"}
+              src={"/bug.png"}
               alt="Logo Meta"
-              style={{ width: "20px", height: "20px" }}
+              style={{ width: "22px", height: "22px" }}
             />
           </Tooltip>
         </ListItem>

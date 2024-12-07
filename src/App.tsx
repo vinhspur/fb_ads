@@ -13,7 +13,7 @@ function App() {
       </Box>
 
       {/* Main Content */}
-      <Box flex="1" padding={2}>
+      <Box flex="1">
         {/* Thanh công cụ và bảng dữ liệu */}
         <MainContent />
       </Box>
