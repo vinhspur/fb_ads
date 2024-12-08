@@ -1,20 +1,9 @@
 import React, { FC } from "react";
-import {
-  AppBar,
-  Box,
-  Tab,
-  Tabs,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-} from "@mui/material";
+import { AppBar, Box, Tab, Tabs, Typography } from "@mui/material";
 import CampaignIcon from "@mui/icons-material/Campaign"; // Icon for "Chiến dịch"
 import GroupIcon from "@mui/icons-material/Group"; // Icon for "Nhóm quảng cáo"
 import AdUnitsIcon from "@mui/icons-material/AdUnits"; // Icon for "Quảng cáo"
+import DataTable from "./DataTable";
 
 // Định nghĩa kiểu dữ liệu cho từng hàng
 interface RowData {
@@ -40,7 +29,6 @@ const TabPanel: FC<TabPanelProps> = ({ children, value, index }) => {
       hidden={value !== index}
       id={`tabpanel-${index}`}
       aria-labelledby={`tab-${index}`}
-      sx={{ p: 2 }}
     >
       {value === index && <Box>{children}</Box>}
     </Box>
@@ -107,34 +95,6 @@ const HeaderWithTabs: FC = () => {
     },
   ];
 
-  // Hàm render bảng với kiểu `RowData[]`
-  const renderTable = (rows: RowData[]) => (
-    <TableContainer component={Paper}>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Tên chiến dịch</TableCell>
-            <TableCell>Trạng thái</TableCell>
-            <TableCell>Ngân sách</TableCell>
-            <TableCell>Chi tiêu</TableCell>
-            <TableCell>Kết quả</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row, index) => (
-            <TableRow key={index}>
-              <TableCell>{row.campaign}</TableCell>
-              <TableCell>{row.status}</TableCell>
-              <TableCell>{row.budget}</TableCell>
-              <TableCell>{row.spent}</TableCell>
-              <TableCell>{row.result}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
-
   return (
     <Box sx={{ maxWidth: "100%", margin: "0 auto", paddingRight: "16px" }}>
       {/* Tabs */}
@@ -143,7 +103,6 @@ const HeaderWithTabs: FC = () => {
         color="default"
         sx={{
           boxShadow: "none",
-          borderBottom: "1px solid #e0e0e0",
           backgroundColor: "transparent", // Loại bỏ màu nền
         }}
       >
@@ -156,46 +115,78 @@ const HeaderWithTabs: FC = () => {
           scrollButtons="auto"
           sx={{
             "& .MuiTabs-flexContainer": {
-              gap: "16px",
+              gap: "8px",
             },
+            "& .MuiTabs-indicator": {
+              display: "none", // Ẩn chỉ báo mặc định
+            },
+            minHeight: "40px",
+            height: "40px",
           }}
         >
           <Tab
             label={
-              <Box display="flex" alignItems="start" gap="8px">
-                <CampaignIcon /> Chiến dịch
+              <Box
+                display="flex"
+                alignItems="center"
+                justifyContent="flex-start"
+                gap="8px"
+                width={"100%"}
+              >
+                <CampaignIcon />
+                <Typography fontWeight={"bold"}>Chiến dịch</Typography>
               </Box>
             }
             id="tab-0"
             sx={{
               textTransform: "none",
-              borderRadius: "4px",
               backgroundColor: "#ffffff",
               width: "18vw",
               borderTopRightRadius: "8px",
               borderTopLeftRadius: "8px",
+              minHeight: "40px",
+              height: "40px",
             }}
           />
           <Tab
             label={
-              <Box display="flex" alignItems="start" gap="8px">
-                <GroupIcon /> Nhóm quảng cáo
+              <Box
+                display="flex"
+                alignItems="center"
+                justifyContent="flex-start"
+                gap="8px"
+                width={"100%"}
+              >
+                <GroupIcon style={{ color: "#1C2B33" }} />{" "}
+                <Typography fontWeight={"bold"} style={{ color: "#1C2B33" }}>
+                  Nhóm quảng cáo
+                </Typography>
               </Box>
             }
             id="tab-1"
             sx={{
               textTransform: "none",
-              borderRadius: "4px",
               backgroundColor: "#F9F8FB",
               width: "18vw",
               borderTopRightRadius: "8px",
               borderTopLeftRadius: "8px",
+              minHeight: "40px",
+              height: "40px",
             }}
           />
           <Tab
             label={
-              <Box display="flex" alignItems="start" gap="8px">
-                <AdUnitsIcon /> Quảng cáo
+              <Box
+                display="flex"
+                alignItems="center"
+                justifyContent="flex-start"
+                gap="8px"
+                width={"100%"}
+              >
+                <AdUnitsIcon style={{ color: "#1C2B33" }} />
+                <Typography fontWeight={"bold"} style={{ color: "#1C2B33" }}>
+                  Quảng cáo
+                </Typography>
               </Box>
             }
             id="tab-2"
@@ -205,6 +196,8 @@ const HeaderWithTabs: FC = () => {
               width: "18vw",
               borderTopRightRadius: "8px",
               borderTopLeftRadius: "8px",
+              minHeight: "40px",
+              height: "40px",
             }}
           />
         </Tabs>
@@ -212,13 +205,175 @@ const HeaderWithTabs: FC = () => {
 
       {/* Tab Panels */}
       <TabPanel value={value} index={0}>
-        {renderTable(rowsTab1)}
+        {/* Hàng nút */}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            backgroundColor: "#ffffff", // Nền trắng
+            padding: "16px",
+            boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)", // Đổ bóng nhẹ
+          }}
+        >
+          {/* Nút bên trái */}
+          <Box display="flex" gap="8px">
+            {/* Tạo */}
+            <button
+              style={{
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: "#28a745",
+                color: "#fff",
+                border: "none",
+                padding: "8px 16px",
+                borderRadius: "4px",
+                cursor: "pointer",
+                fontWeight: "bold",
+              }}
+            >
+              <span style={{ marginRight: "8px" }}>+</span> Tạo
+            </button>
+
+            {/* Sao chép */}
+            <button
+              style={{
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: "#ffffff",
+                color: "#343a40",
+                border: "1px solid #ced4da",
+                padding: "8px 16px",
+                borderRadius: "4px",
+                cursor: "pointer",
+              }}
+            >
+              <span style={{ marginRight: "8px" }}>📋</span> Sao chép
+            </button>
+
+            {/* Chỉnh sửa */}
+            <button
+              style={{
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: "#ffffff",
+                color: "#343a40",
+                border: "1px solid #ced4da",
+                padding: "8px 16px",
+                borderRadius: "4px",
+                cursor: "pointer",
+              }}
+            >
+              <span style={{ marginRight: "8px" }}>✏️</span> Chỉnh sửa
+            </button>
+
+            {/* Thử nghiệm A/B */}
+            <button
+              style={{
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: "#ffffff",
+                color: "#343a40",
+                border: "1px solid #ced4da",
+                padding: "8px 16px",
+                borderRadius: "4px",
+                cursor: "pointer",
+              }}
+            >
+              <span style={{ marginRight: "8px" }}>⚗️</span> Thử nghiệm A/B
+            </button>
+
+            {/* Xem thêm */}
+            <button
+              style={{
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: "#ffffff",
+                color: "#343a40",
+                border: "1px solid #ced4da",
+                padding: "8px 16px",
+                borderRadius: "4px",
+                cursor: "pointer",
+              }}
+            >
+              Xem thêm ▼
+            </button>
+          </Box>
+
+          {/* Nút bên phải */}
+          <Box display="flex" gap="8px">
+            {/* Cột */}
+            <button
+              style={{
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: "#ffffff",
+                color: "#343a40",
+                border: "1px solid #ced4da",
+                padding: "8px 16px",
+                borderRadius: "4px",
+                cursor: "pointer",
+              }}
+            >
+              <span style={{ marginRight: "8px" }}>⏸️</span> Cột: 1 ▼
+            </button>
+
+            {/* Số liệu chia nhỏ */}
+            <button
+              style={{
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: "#ffffff",
+                color: "#343a40",
+                border: "1px solid #ced4da",
+                padding: "8px 16px",
+                borderRadius: "4px",
+                cursor: "pointer",
+              }}
+            >
+              <span style={{ marginRight: "8px" }}>📊</span> Số liệu chia nhỏ
+            </button>
+
+            {/* Báo cáo */}
+            <button
+              style={{
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: "#ffffff",
+                color: "#343a40",
+                border: "1px solid #ced4da",
+                padding: "8px 16px",
+                borderRadius: "4px",
+                cursor: "pointer",
+              }}
+            >
+              <span style={{ marginRight: "8px" }}>📄</span> Báo cáo
+            </button>
+
+            {/* Xuất */}
+            <button
+              style={{
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: "#ffffff",
+                color: "#343a40",
+                border: "1px solid #ced4da",
+                padding: "8px 16px",
+                borderRadius: "4px",
+                cursor: "pointer",
+              }}
+            >
+              <span style={{ marginRight: "8px" }}>📤</span> Xuất
+            </button>
+          </Box>
+        </Box>
+        <DataTable rows={rowsTab1} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        {renderTable(rowsTab2)}
+        <DataTable rows={rowsTab2} />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        {renderTable(rowsTab3)}
+        <DataTable rows={rowsTab3} />
       </TabPanel>
     </Box>
   );
