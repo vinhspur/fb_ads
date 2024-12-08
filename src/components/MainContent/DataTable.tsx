@@ -79,6 +79,7 @@ const DataTable: FC<DataTableProps> = ({ rows }) => {
     <TableContainer
       component={Paper}
       style={{
+        borderTop: "0.5px solid #ddd",
         overflowX: "auto",
         overflowY: "auto",
       }}
@@ -87,82 +88,344 @@ const DataTable: FC<DataTableProps> = ({ rows }) => {
         <TableHead>
           <TableRow>
             {/* Checkbox "Chọn tất cả" */}
-            <StickyTableCell style={{ zIndex: 3, minWidth: 50 }}>
-              <Checkbox checked={isAllChecked} onChange={handleSelectAll} />
+            <StickyTableCell
+              style={{
+                zIndex: 3,
+                minWidth: 50,
+                borderRight: "0.5px solid #ddd",
+                fontWeight: "bold",
+                padding: "0px 0px 0px 12px",
+              }}
+            >
+              <Checkbox
+                checked={isAllChecked}
+                onChange={handleSelectAll}
+                sx={{
+                  backgroundColor: "#ffffff",
+                  transform: "scale(1.2)", // Tăng kích thước của checkbox
+                  "& .MuiSvgIcon-root": {
+                    fontSize: 20, // Điều chỉnh kích thước biểu tượng
+                    borderRadius: "4px",
+                    border: "0.5px solid #ddd",
+                  },
+                  "& .MuiSvgIcon-root path": {
+                    display: "none",
+                  },
+                }}
+              />
             </StickyTableCell>
 
             {/* Toggle */}
-            <StickyTableCell style={{ zIndex: 3, minWidth: 100 }}>
+            <StickyTableCell
+              style={{
+                zIndex: 3,
+                minWidth: 100,
+                borderRight: "0.5px solid #ddd",
+                fontWeight: "bold",
+                padding: "0px 0px 0px 12px",
+              }}
+            >
               Tắt/Bật
             </StickyTableCell>
 
             {/* Cột Chiến dịch */}
-            <StickyTableCell style={{ zIndex: 3, minWidth: 376 }}>
+            <StickyTableCell
+              style={{
+                zIndex: 3,
+                minWidth: 376,
+                borderRight: "0.5px solid #ddd",
+                fontWeight: "bold",
+                padding: "0px 0px 0px 12px",
+              }}
+            >
               Chiến dịch
             </StickyTableCell>
 
             {/* Các cột còn lại */}
-            <TableCell sx={{ minWidth: 137 }}>Phân phối</TableCell>
-            <TableCell sx={{ minWidth: 137 }}>Ngân sách</TableCell>
-            <TableCell sx={{ minWidth: 137 }}>Số tiền đã chi tiêu</TableCell>
-            <TableCell sx={{ minWidth: 137 }}>
+            <TableCell
+              sx={{
+                minWidth: 137,
+                borderRight: "0.5px solid #ddd",
+                fontWeight: "bold",
+                padding: "0px 0px 0px 12px",
+              }}
+            >
+              Phân phối
+            </TableCell>
+            <TableCell
+              sx={{
+                minWidth: 137,
+                borderRight: "0.5px solid #ddd",
+                fontWeight: "bold",
+                padding: "0px 0px 0px 12px",
+              }}
+            >
+              Ngân sách
+            </TableCell>
+            <TableCell
+              sx={{
+                minWidth: 137,
+                borderRight: "0.5px solid #ddd",
+                fontWeight: "bold",
+                padding: "0px 0px 0px 12px",
+              }}
+            >
+              Số tiền đã chi tiêu
+            </TableCell>
+            <TableCell
+              sx={{
+                minWidth: 137,
+                borderRight: "0.5px solid #ddd",
+                fontWeight: "bold",
+                padding: "0px 0px 0px 12px",
+              }}
+            >
               Chi phí trên mỗi kết quả
             </TableCell>
-            <TableCell sx={{ minWidth: 137 }}>Kết quả</TableCell>
-            <TableCell sx={{ minWidth: 137 }}>Bình luận về bài viết</TableCell>
-            <TableCell sx={{ minWidth: 137 }}>Người tiếp cận</TableCell>
-            <TableCell sx={{ minWidth: 137 }}>Lượt hiển thị</TableCell>
-            <TableCell sx={{ minWidth: 137 }}>CPC (Tất cả)</TableCell>
-            <TableCell sx={{ minWidth: 137 }}>CTP (Tất cả)</TableCell>
-            <TableCell sx={{ minWidth: 137 }}>
+            <TableCell
+              sx={{
+                minWidth: 137,
+                borderRight: "0.5px solid #ddd",
+                fontWeight: "bold",
+                padding: "0px 0px 0px 12px",
+              }}
+            >
+              Kết quả
+            </TableCell>
+            <TableCell
+              sx={{
+                minWidth: 137,
+                borderRight: "0.5px solid #ddd",
+                fontWeight: "bold",
+                padding: "0px 0px 0px 12px",
+              }}
+            >
+              Bình luận về bài viết
+            </TableCell>
+            <TableCell
+              sx={{
+                minWidth: 137,
+                borderRight: "0.5px solid #ddd",
+                fontWeight: "bold",
+                padding: "0px 0px 0px 12px",
+              }}
+            >
+              Người tiếp cận
+            </TableCell>
+            <TableCell
+              sx={{
+                minWidth: 137,
+                borderRight: "0.5px solid #ddd",
+                fontWeight: "bold",
+                padding: "0px 0px 0px 12px",
+              }}
+            >
+              Lượt hiển thị
+            </TableCell>
+            <TableCell
+              sx={{
+                minWidth: 137,
+                borderRight: "0.5px solid #ddd",
+                fontWeight: "bold",
+                padding: "0px 0px 0px 12px",
+              }}
+            >
+              CPC (Tất cả)
+            </TableCell>
+            <TableCell
+              sx={{
+                minWidth: 137,
+                borderRight: "0.5px solid #ddd",
+                fontWeight: "bold",
+                padding: "0px 0px 0px 12px",
+              }}
+            >
+              CTP (Tất cả)
+            </TableCell>
+            <TableCell sx={{ minWidth: 137, fontWeight: "bold", padding: 0 }}>
               CPM (Chi phí mỗi 1000 lần hiển thị)
             </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row, index) => (
-            <TableRow key={index}>
+            <TableRow
+              key={index}
+              sx={{
+                backgroundColor: index % 2 === 0 ? "#f5f5f5" : "#ffffff", // Màu nền xen kẽ
+                height: 50,
+              }}
+            >
               {/* Checkbox cho từng hàng */}
-              <StickyTableCell style={{ minWidth: 50 }}>
+              <StickyTableCell
+                style={{
+                  minWidth: 50,
+                  borderRight: "0.5px solid #ddd",
+                  padding: "0px 0px 0px 12px",
+                }}
+                sx={{
+                  backgroundColor: index % 2 === 0 ? "#F5F6F7" : "#ffffff", // màu xám cho hàng chẵn, trắng cho hàng lẻ
+                }}
+              >
                 <Checkbox
                   checked={selectedRows[index]}
                   onChange={() => handleRowCheckbox(index)}
+                  sx={{
+                    transform: "scale(1.2)", // Tăng kích thước của checkbox
+                    "& .MuiSvgIcon-root": {
+                      fontSize: 20, // Điều chỉnh kích thước biểu tượng
+                      borderRadius: "4px",
+                      border: "0.5px solid #ddd",
+                      backgroundColor: "#ffffff",
+                    },
+                    "& .MuiSvgIcon-root path": {
+                      display: "none",
+                    },
+                  }}
                 />
               </StickyTableCell>
 
               {/* Toggle cho từng hàng */}
-              <StickyTableCell style={{ minWidth: 100 }}>
+              <StickyTableCell
+                style={{
+                  minWidth: 100,
+                  borderRight: "0.5px solid #ddd",
+                  padding: "0px 0px 0px 12px",
+                }}
+                sx={{
+                  backgroundColor: index % 2 === 0 ? "#F5F6F7" : "#ffffff", // màu xám cho hàng chẵn, trắng cho hàng lẻ
+                }}
+              >
                 <Switch
                   size="medium"
-                  sx={{ height: 40 }}
                   checked={toggleStates[index]}
                   onChange={() => handleToggleChange(index)}
+                  sx={{
+                    "& .MuiSwitch-thumb": {
+                      width: 22, // Kích thước của nút gạt
+                      height: 22,
+                      marginTop: "3px",
+                    },
+                    "& .MuiSwitch-track": {
+                      width: 38,
+                      maxHeight: 22,
+                      height: 22,
+                      borderRadius: "30px",
+                    },
+                  }}
                 />
               </StickyTableCell>
 
               {/* Cột Chiến dịch */}
-              <StickyTableCell style={{ minWidth: 376 }}>
+              <StickyTableCell
+                style={{
+                  minWidth: 376,
+                  borderRight: "0.5px solid #ddd",
+                  padding: "0px 0px 0px 12px",
+                }}
+                sx={{
+                  backgroundColor: index % 2 === 0 ? "#F5F6F7" : "#ffffff", // màu xám cho hàng chẵn, trắng cho hàng lẻ
+                }}
+              >
                 <Typography color="#4985D4" fontSize={"14px"}>
                   {row.campaign}
                 </Typography>
               </StickyTableCell>
 
               {/* Các cột còn lại */}
-              <TableCell sx={{ minWidth: 137 }}>{row.budget}</TableCell>
-              <TableCell sx={{ minWidth: 137 }}>{row.spent}</TableCell>
-              <TableCell sx={{ minWidth: 137 }}>{row.result}</TableCell>
-              <TableCell sx={{ minWidth: 137 }}>{row.impressions}</TableCell>
-              <TableCell sx={{ minWidth: 137 }}>{row.reach}</TableCell>
-              <TableCell sx={{ minWidth: 137 }}>{row.ctr}</TableCell>
-              <TableCell sx={{ minWidth: 137 }}>{row.cpc}</TableCell>
-              <TableCell sx={{ minWidth: 137 }}>{row.cpm}</TableCell>
-              <TableCell sx={{ minWidth: 137 }}>{row.frequency}</TableCell>
-              <TableCell sx={{ minWidth: 137 }}>{row.clicks}</TableCell>
-              <TableCell sx={{ minWidth: 137 }}>{row.conversions}</TableCell>
-              <TableCell sx={{ minWidth: 137 }}>
-                {row.costPerConversion}
+              <TableCell
+                sx={{
+                  minWidth: 137,
+                  borderRight: "0.5px solid #ddd",
+                  padding: "0px 0px 0px 12px",
+                }}
+              >
+                {row.budget}
               </TableCell>
-              <TableCell sx={{ minWidth: 137 }}>{row.conversionRate}</TableCell>
+              <TableCell
+                sx={{
+                  minWidth: 137,
+                  borderRight: "0.5px solid #ddd",
+                  padding: "0px 0px 0px 12px",
+                }}
+              >
+                {row.spent}
+              </TableCell>
+              <TableCell
+                sx={{
+                  minWidth: 137,
+                  borderRight: "0.5px solid #ddd",
+                  padding: "0px 0px 0px 12px",
+                }}
+              >
+                {row.result}
+              </TableCell>
+              <TableCell
+                sx={{
+                  minWidth: 137,
+                  borderRight: "0.5px solid #ddd",
+                  padding: "0px 0px 0px 12px",
+                }}
+              >
+                {row.impressions}
+              </TableCell>
+              <TableCell
+                sx={{
+                  minWidth: 137,
+                  borderRight: "0.5px solid #ddd",
+                  padding: "0px 0px 0px 12px",
+                }}
+              >
+                {row.reach}
+              </TableCell>
+              <TableCell
+                sx={{
+                  minWidth: 137,
+                  borderRight: "0.5px solid #ddd",
+                  padding: "0px 0px 0px 12px",
+                }}
+              >
+                {row.ctr}
+              </TableCell>
+              <TableCell
+                sx={{
+                  minWidth: 137,
+                  borderRight: "0.5px solid #ddd",
+                  padding: "0px 0px 0px 12px",
+                }}
+              >
+                {row.cpc}
+              </TableCell>
+              <TableCell
+                sx={{
+                  minWidth: 137,
+                  borderRight: "0.5px solid #ddd",
+                  padding: "0px 0px 0px 12px",
+                }}
+              >
+                {row.cpm}
+              </TableCell>
+              <TableCell
+                sx={{
+                  minWidth: 137,
+                  borderRight: "0.5px solid #ddd",
+                  padding: "0px 0px 0px 12px",
+                }}
+              >
+                {row.frequency}
+              </TableCell>
+              <TableCell
+                sx={{
+                  minWidth: 137,
+                  borderRight: "0.5px solid #ddd",
+                  padding: "0px 0px 0px 12px",
+                }}
+              >
+                {row.clicks}
+              </TableCell>
+              <TableCell sx={{ minWidth: 137, padding: "0px 0px 0px 12px" }}>
+                {row.conversions}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
