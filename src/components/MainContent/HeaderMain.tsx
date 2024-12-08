@@ -76,6 +76,7 @@ const HeaderMain = () => {
             borderColor: "#ccc",
             color: "#000",
             minWidth: "unset",
+            textTransform: "none", // Thêm dòng này để ngừng tự động viết hoa
             "&:hover": {
               backgroundColor: "#f5f5f5",
             },
@@ -87,9 +88,10 @@ const HeaderMain = () => {
           variant="contained"
           sx={{
             height: "36px",
-            backgroundColor: "#2196f3",
+            backgroundColor: "#0A78BE",
             color: "#fff",
             minWidth: "unset",
+            textTransform: "none",
             "&:hover": {
               backgroundColor: "#1976d2",
             },

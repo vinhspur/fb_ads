@@ -58,13 +58,14 @@ const HeaderBottom = () => {
               "&:hover": {
                 backgroundColor: "#1976d2",
               },
+              fontWeight: "bold",
             }}
           >
             Tất cả quảng cáo
           </Button>
           <Button
             variant="outlined"
-            startIcon={<FlashOnIcon />}
+            startIcon={<FlashOnIcon color="disabled" />}
             sx={{
               height: "36px",
               borderColor: "#ccc",
@@ -81,7 +82,7 @@ const HeaderBottom = () => {
           </Button>
           <Button
             variant="outlined"
-            startIcon={<FlashOnIcon />}
+            startIcon={<FlashOnIcon color="disabled" />}
             sx={{
               height: "36px",
               borderColor: "#ccc",

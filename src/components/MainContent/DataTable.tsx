@@ -9,6 +9,7 @@ import {
   Paper,
   Checkbox,
   Switch,
+  Typography,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
@@ -39,7 +40,6 @@ interface DataTableProps {
 // Styled component cho ô cố định
 const StickyTableCell = styled(TableCell)(({ theme }) => ({
   position: "sticky",
-  left: 0,
   background: theme.palette.background.paper,
   zIndex: 2,
 }));
@@ -76,20 +76,28 @@ const DataTable: FC<DataTableProps> = ({ rows }) => {
   };
 
   return (
-    <TableContainer component={Paper}>
-      <Table>
+    <TableContainer
+      component={Paper}
+      style={{
+        overflowX: "auto",
+        overflowY: "auto",
+      }}
+    >
+      <Table stickyHeader>
         <TableHead>
           <TableRow>
             {/* Checkbox "Chọn tất cả" */}
-            <StickyTableCell>
+            <StickyTableCell style={{ zIndex: 3, minWidth: 50 }}>
               <Checkbox checked={isAllChecked} onChange={handleSelectAll} />
             </StickyTableCell>
 
             {/* Toggle */}
-            <StickyTableCell style={{ left: 50 }}>Tắt/Bật</StickyTableCell>
+            <StickyTableCell style={{ zIndex: 3, minWidth: 100 }}>
+              Tắt/Bật
+            </StickyTableCell>
 
             {/* Cột Chiến dịch */}
-            <StickyTableCell style={{ left: 110, width: 326 }}>
+            <StickyTableCell style={{ zIndex: 3, minWidth: 376 }}>
               Chiến dịch
             </StickyTableCell>
 
@@ -115,7 +123,7 @@ const DataTable: FC<DataTableProps> = ({ rows }) => {
           {rows.map((row, index) => (
             <TableRow key={index}>
               {/* Checkbox cho từng hàng */}
-              <StickyTableCell>
+              <StickyTableCell style={{ minWidth: 50 }}>
                 <Checkbox
                   checked={selectedRows[index]}
                   onChange={() => handleRowCheckbox(index)}
@@ -123,16 +131,20 @@ const DataTable: FC<DataTableProps> = ({ rows }) => {
               </StickyTableCell>
 
               {/* Toggle cho từng hàng */}
-              <StickyTableCell style={{ left: 50 }}>
+              <StickyTableCell style={{ minWidth: 100 }}>
                 <Switch
+                  size="medium"
+                  sx={{ height: 40 }}
                   checked={toggleStates[index]}
                   onChange={() => handleToggleChange(index)}
                 />
               </StickyTableCell>
 
               {/* Cột Chiến dịch */}
-              <StickyTableCell style={{ left: 110, width: 326 }}>
-                {row.campaign}
+              <StickyTableCell style={{ minWidth: 376 }}>
+                <Typography color="#4985D4" fontSize={"14px"}>
+                  {row.campaign}
+                </Typography>
               </StickyTableCell>
 
               {/* Các cột còn lại */}

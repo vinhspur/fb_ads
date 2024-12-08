@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { AppBar, Box, Tab, Tabs, Typography } from "@mui/material";
+import { AppBar, Box, Tab, Tabs, Typography, Button } from "@mui/material";
 import CampaignIcon from "@mui/icons-material/Campaign"; // Icon for "Chiến dịch"
 import GroupIcon from "@mui/icons-material/Group"; // Icon for "Nhóm quảng cáo"
 import AdUnitsIcon from "@mui/icons-material/AdUnits"; // Icon for "Quảng cáo"
@@ -38,37 +38,88 @@ const HeaderWithTabs: FC = () => {
 
   const rowsTab1: RowData[] = [
     {
-      campaign: "Chiến dịch 1",
-      status: "Hoạt động",
+      campaign: "Chiến dịch A",
+      status: "Đang chạy",
+      budget: "150.000đ",
+      spent: "80.000đ",
+      result: "Tiềm năng",
+      impressions: "12,000",
+      reach: "9,500",
+      ctr: "2.8%",
+      cpc: "1,200đ",
+      cpm: "450,000đ",
+      frequency: "1.3",
+      clicks: "280",
+      conversions: "70",
+      costPerConversion: "2,000đ",
+      conversionRate: "25%",
+    },
+    {
+      campaign: "Chiến dịch B",
+      status: "Hoàn thành",
+      budget: "250.000đ",
+      spent: "250.000đ",
+      result: "Đạt mục tiêu",
+      impressions: "30,000",
+      reach: "22,000",
+      ctr: "3.5%",
+      cpc: "1,400đ",
+      cpm: "700,000đ",
+      frequency: "1.6",
+      clicks: "350",
+      conversions: "90",
+      costPerConversion: "2,778đ",
+      conversionRate: "28%",
+    },
+    {
+      campaign: "Chiến dịch C",
+      status: "Đang chạy",
       budget: "100.000đ",
-      spent: "50.000đ",
-      result: "Hiệu quả",
-      impressions: "10,000",
-      reach: "8,000",
+      spent: "40.000đ",
+      result: "Tiềm năng",
+      impressions: "8,000",
+      reach: "7,000",
       ctr: "2.5%",
       cpc: "1,000đ",
-      cpm: "500,000đ",
-      frequency: "1.2",
-      clicks: "250",
-      conversions: "50",
-      costPerConversion: "2,000đ",
+      cpm: "400,000đ",
+      frequency: "1.1",
+      clicks: "200",
+      conversions: "40",
+      costPerConversion: "1,000đ",
       conversionRate: "20%",
     },
     {
-      campaign: "Chiến dịch 2",
-      status: "Hoàn tất",
-      budget: "200.000đ",
-      spent: "200.000đ",
+      campaign: "Chiến dịch D",
+      status: "Hoàn thành",
+      budget: "300.000đ",
+      spent: "300.000đ",
       result: "Đạt mục tiêu",
-      impressions: "20,000",
-      reach: "15,000",
+      impressions: "40,000",
+      reach: "30,000",
+      ctr: "4.0%",
+      cpc: "1,200đ",
+      cpm: "800,000đ",
+      frequency: "1.8",
+      clicks: "480",
+      conversions: "120",
+      costPerConversion: "2,500đ",
+      conversionRate: "25%",
+    },
+    {
+      campaign: "Chiến dịch E",
+      status: "Đang chạy",
+      budget: "200.000đ",
+      spent: "100.000đ",
+      result: "Hiệu quả",
+      impressions: "15,000",
+      reach: "13,000",
       ctr: "3.0%",
       cpc: "1,500đ",
       cpm: "600,000đ",
-      frequency: "1.5",
+      frequency: "1.4",
       clicks: "300",
       conversions: "75",
-      costPerConversion: "2,667đ",
+      costPerConversion: "1,333đ",
       conversionRate: "25%",
     },
   ];
@@ -197,162 +248,140 @@ const HeaderWithTabs: FC = () => {
           {/* Nút bên trái */}
           <Box display="flex" gap="8px">
             {/* Tạo */}
-            <button
-              style={{
+            <Button
+              variant="contained"
+              sx={{
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: "#28a745",
-                color: "#fff",
-                border: "none",
-                padding: "8px 16px",
-                borderRadius: "4px",
-                cursor: "pointer",
                 fontWeight: "bold",
+                textTransform: "none",
+                backgroundColor: "#007E59",
               }}
             >
               <span style={{ marginRight: "8px" }}>+</span> Tạo
-            </button>
+            </Button>
 
             {/* Sao chép */}
-            <button
-              style={{
+            <Button
+              variant="outlined"
+              sx={{
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: "#ffffff",
                 color: "#343a40",
-                border: "1px solid #ced4da",
-                padding: "8px 16px",
-                borderRadius: "4px",
-                cursor: "pointer",
+                borderColor: "#ced4da",
               }}
             >
               <span style={{ marginRight: "8px" }}>📋</span> Sao chép
-            </button>
+            </Button>
 
             {/* Chỉnh sửa */}
-            <button
-              style={{
+            <Button
+              variant="outlined"
+              sx={{
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: "#ffffff",
                 color: "#343a40",
-                border: "1px solid #ced4da",
-                padding: "8px 16px",
-                borderRadius: "4px",
-                cursor: "pointer",
+                borderColor: "#ced4da",
               }}
             >
-              <span style={{ marginRight: "8px" }}>✏️</span> Chỉnh sửa
-            </button>
+              Chỉnh sửa
+              <span style={{ marginLeft: "8px" }}>▼</span>
+            </Button>
 
             {/* Thử nghiệm A/B */}
-            <button
-              style={{
+            <Button
+              variant="outlined"
+              sx={{
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: "#ffffff",
                 color: "#343a40",
-                border: "1px solid #ced4da",
-                padding: "8px 16px",
-                borderRadius: "4px",
-                cursor: "pointer",
+                borderColor: "#ced4da",
               }}
             >
               <span style={{ marginRight: "8px" }}>⚗️</span> Thử nghiệm A/B
-            </button>
+            </Button>
 
             {/* Xem thêm */}
-            <button
-              style={{
+            <Button
+              variant="outlined"
+              sx={{
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: "#ffffff",
                 color: "#343a40",
-                border: "1px solid #ced4da",
-                padding: "8px 16px",
-                borderRadius: "4px",
-                cursor: "pointer",
+                borderColor: "#ced4da",
               }}
             >
-              Xem thêm ▼
-            </button>
+              Xem thêm
+              <span style={{ marginLeft: "8px" }}>▼</span>
+            </Button>
           </Box>
 
           {/* Nút bên phải */}
-          <Box display="flex" gap="8px">
-            {/* Cột */}
-            <button
-              style={{
+          <Box display="flex" gap="8px" justifyContent="flex-end">
+            {/* Nút bên phải thêm */}
+            <Button
+              variant="outlined"
+              sx={{
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: "#ffffff",
                 color: "#343a40",
-                border: "1px solid #ced4da",
-                padding: "8px 16px",
-                borderRadius: "4px",
-                cursor: "pointer",
+                borderColor: "#ced4da",
               }}
             >
-              <span style={{ marginRight: "8px" }}>⏸️</span> Cột: 1 ▼
-            </button>
-
-            {/* Số liệu chia nhỏ */}
-            <button
-              style={{
+              Nút 1
+            </Button>
+            <Button
+              variant="outlined"
+              sx={{
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: "#ffffff",
                 color: "#343a40",
-                border: "1px solid #ced4da",
-                padding: "8px 16px",
-                borderRadius: "4px",
-                cursor: "pointer",
+                borderColor: "#ced4da",
               }}
             >
-              <span style={{ marginRight: "8px" }}>📊</span> Số liệu chia nhỏ
-            </button>
-
-            {/* Báo cáo */}
-            <button
-              style={{
+              Nút 2
+            </Button>
+            <Button
+              variant="outlined"
+              sx={{
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: "#ffffff",
                 color: "#343a40",
-                border: "1px solid #ced4da",
-                padding: "8px 16px",
-                borderRadius: "4px",
-                cursor: "pointer",
+                borderColor: "#ced4da",
               }}
             >
-              <span style={{ marginRight: "8px" }}>📄</span> Báo cáo
-            </button>
-
-            {/* Xuất */}
-            <button
-              style={{
+              Nút 3
+            </Button>
+            <Button
+              variant="outlined"
+              sx={{
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: "#ffffff",
                 color: "#343a40",
-                border: "1px solid #ced4da",
-                padding: "8px 16px",
-                borderRadius: "4px",
-                cursor: "pointer",
+                borderColor: "#ced4da",
               }}
             >
-              <span style={{ marginRight: "8px" }}>📤</span> Xuất
-            </button>
+              Nút 4
+            </Button>
+            <Button
+              variant="outlined"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                color: "#343a40",
+                borderColor: "#ced4da",
+              }}
+            >
+              Nút 5
+            </Button>
           </Box>
         </Box>
-        <DataTable rows={rowsTab1} />
+
+        {/* Bảng dữ liệu */}
+        <Box sx={{ maxWidth: "calc(91vw + 12px)" }}>
+          <DataTable rows={rowsTab1} />
+        </Box>
       </TabPanel>
-      {/* <TabPanel value={value} index={1}>
-        <DataTable rows={rowsTab2} />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <DataTable rows={rowsTab3} />
-      </TabPanel> */}
     </Box>
   );
 };
