@@ -3,16 +3,7 @@ import { AppBar, Box, Tab, Tabs, Typography } from "@mui/material";
 import CampaignIcon from "@mui/icons-material/Campaign"; // Icon for "Chiến dịch"
 import GroupIcon from "@mui/icons-material/Group"; // Icon for "Nhóm quảng cáo"
 import AdUnitsIcon from "@mui/icons-material/AdUnits"; // Icon for "Quảng cáo"
-import DataTable from "./DataTable";
-
-// Định nghĩa kiểu dữ liệu cho từng hàng
-interface RowData {
-  campaign: string;
-  status: string;
-  budget: string;
-  spent: string;
-  result: string;
-}
+import DataTable, { RowData } from "./DataTable";
 
 // Định nghĩa kiểu cho TabPanel
 interface TabPanelProps {
@@ -44,6 +35,7 @@ const HeaderWithTabs: FC = () => {
   };
 
   // Dữ liệu giả cho bảng (kiểu `RowData[]`)
+
   const rowsTab1: RowData[] = [
     {
       campaign: "Chiến dịch 1",
@@ -51,6 +43,16 @@ const HeaderWithTabs: FC = () => {
       budget: "100.000đ",
       spent: "50.000đ",
       result: "Hiệu quả",
+      impressions: "10,000",
+      reach: "8,000",
+      ctr: "2.5%",
+      cpc: "1,000đ",
+      cpm: "500,000đ",
+      frequency: "1.2",
+      clicks: "250",
+      conversions: "50",
+      costPerConversion: "2,000đ",
+      conversionRate: "20%",
     },
     {
       campaign: "Chiến dịch 2",
@@ -58,40 +60,16 @@ const HeaderWithTabs: FC = () => {
       budget: "200.000đ",
       spent: "200.000đ",
       result: "Đạt mục tiêu",
-    },
-  ];
-
-  const rowsTab2: RowData[] = [
-    {
-      campaign: "Quảng cáo 1",
-      status: "Đang chạy",
-      budget: "150.000đ",
-      spent: "70.000đ",
-      result: "Tương tác tốt",
-    },
-    {
-      campaign: "Quảng cáo 2",
-      status: "Dừng",
-      budget: "300.000đ",
-      spent: "150.000đ",
-      result: "Trung bình",
-    },
-  ];
-
-  const rowsTab3: RowData[] = [
-    {
-      campaign: "Nhóm 1",
-      status: "Đang chạy",
-      budget: "400.000đ",
-      spent: "250.000đ",
-      result: "Rất tốt",
-    },
-    {
-      campaign: "Nhóm 2",
-      status: "Hoàn tất",
-      budget: "500.000đ",
-      spent: "500.000đ",
-      result: "Hoàn thành xuất sắc",
+      impressions: "20,000",
+      reach: "15,000",
+      ctr: "3.0%",
+      cpc: "1,500đ",
+      cpm: "600,000đ",
+      frequency: "1.5",
+      clicks: "300",
+      conversions: "75",
+      costPerConversion: "2,667đ",
+      conversionRate: "25%",
     },
   ];
 
@@ -369,12 +347,12 @@ const HeaderWithTabs: FC = () => {
         </Box>
         <DataTable rows={rowsTab1} />
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      {/* <TabPanel value={value} index={1}>
         <DataTable rows={rowsTab2} />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <DataTable rows={rowsTab3} />
-      </TabPanel>
+      </TabPanel> */}
     </Box>
   );
 };
